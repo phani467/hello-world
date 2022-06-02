@@ -1,0 +1,9 @@
+{
+	"name": "salesforceload",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "324d9d2c-b018-4af2-b4be-f1c4ec25b693",
+		"tenantId": "86ef433f-90da-4a31-8d85-f1b5befee7d0"
+	}
+}
