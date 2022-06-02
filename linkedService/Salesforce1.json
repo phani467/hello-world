@@ -1,0 +1,14 @@
+{
+	"name": "Salesforce1",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "Salesforce",
+		"typeProperties": {
+			"environmentUrl": "https://login.salesforce.com",
+			"username": "anindra91@gmail.com",
+			"apiVersion": "53.0",
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDNBMkE1MjAwLUJDQzktNDE2MC05NkI1LTFFNzkzNUY4MjQ1MV83ODk5NzRkNC05NmRlLTQ5MzMtOTdhNS1iNmVjNTIyYmRhMWIiDQp9"
+		}
+	}
+}
