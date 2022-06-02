@@ -1,0 +1,87 @@
+{
+	"name": "CopyPipeline_ty0",
+	"properties": {
+		"description": "Load data",
+		"activities": [
+			{
+				"name": "ForEach_ty0",
+				"type": "ForEach",
+				"dependsOn": [],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@pipeline().parameters.cw_items",
+						"type": "Expression"
+					},
+					"activities": [
+						{
+							"name": "Copy_ty0",
+							"type": "Copy",
+							"dependsOn": [],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [
+								{
+									"name": "Source",
+									"value": "@{item().source.objectApiName}"
+								},
+								{
+									"name": "Destination",
+									"value": "."
+								}
+							],
+							"typeProperties": {
+								"source": {
+									"type": "SalesforceSource",
+									"readBehavior": "query"
+								},
+								"sink": {
+									"type": "AzureSqlSink"
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "SourceDataset_ty0",
+									"type": "DatasetReference",
+									"parameters": {
+										"cw_objectApiName": "@item().source.objectApiName"
+									}
+								}
+							],
+							"outputs": [
+								{
+									"referenceName": "DestinationDataset_ty0",
+									"type": "DatasetReference"
+								}
+							]
+						}
+					]
+				}
+			}
+		],
+		"parameters": {
+			"cw_items": {
+				"type": "Array",
+				"defaultValue": [
+					{
+						"source": {
+							"objectApiName": "Opportunity"
+						}
+					},
+					{
+						"source": {
+							"objectApiName": "OpportunityLineItem"
+						}
+					}
+				]
+			}
+		},
+		"annotations": []
+	}
+}

@@ -1,0 +1,23 @@
+{
+	"name": "SourceDataset_ty0",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "Salesforce1",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"cw_objectApiName": {
+				"type": "String"
+			}
+		},
+		"annotations": [],
+		"type": "SalesforceObject",
+		"schema": [],
+		"typeProperties": {
+			"objectApiName": {
+				"value": "@dataset().cw_objectApiName",
+				"type": "Expression"
+			}
+		}
+	}
+}
